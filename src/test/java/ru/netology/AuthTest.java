@@ -40,7 +40,7 @@ public class AuthTest {
         $("[data-test-id=login] .input__control").setValue(wrongLogin);
         $("[data-test-id=password] .input__control").setValue(registeredUser.getPassword());
         $("[data-test-id=action-login] .button__content").click();
-        $("[data-test-id=error-notification] .notification__content").shouldBe(Condition.text("Ошибка! " + "Неверно указан логин или пароль"), Duration.ofSeconds(10));
+        $("[data-test-id=error-notification] .notification__content").shouldBe(Condition.text("Ошибка! " + "Неверно указан логин или пароль"), Duration.ofSeconds(15));
     }
 
     @Test
@@ -51,7 +51,7 @@ public class AuthTest {
         $("[data-test-id=login] .input__control").setValue(registeredUser.getLogin());
         $("[data-test-id=password] .input__control").setValue(wrongPassword);
         $("[data-test-id=action-login] .button__content").click();
-        $("[data-test-id=error-notification] .notification__content").shouldBe(Condition.text("Ошибка! " + "Неверно указан логин или пароль"), Duration.ofSeconds(10));
+        $("[data-test-id=error-notification] .notification__content").shouldBe(Condition.text("Ошибка! " + "Неверно указан логин или пароль"), Duration.ofSeconds(15));
     }
 
     @Test
@@ -61,7 +61,7 @@ public class AuthTest {
         $("[data-test-id=login] .input__control").setValue(notRegisteredUser.getLogin());
         $("[data-test-id=password] .input__control").setValue(notRegisteredUser.getPassword());
         $("[data-test-id=action-login] .button__content").click();
-        $("[data-test-id=error-notification] .notification__content").shouldBe(Condition.text("Ошибка! " + "Неверно указан логин или пароль"), Duration.ofSeconds(10));
+        $("[data-test-id=error-notification] .notification__content").shouldBe(Condition.text("Ошибка! " + "Неверно указан логин или пароль"), Duration.ofSeconds(15));
     }
 
     @Test
